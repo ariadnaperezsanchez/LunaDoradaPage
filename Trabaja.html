@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Dorada</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logonuevo.png" alt="Logo de Luna Dorada" class="logo">
+            <h1>Luna Dorada</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/LunaDorada.html">Sobre Nosotros</a></li>
+                <li><a href="/EventosPrivados.html">Eventos Privados</a></li>
+                <li><a href="/Favoritos.html">Los Favoritos</a></li>
+                <li><a href="/CartaPremio.html">Nuestros cócteles</a></li>
+                <li><a href="/Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="trabaja-con-nosotros" class="section-container">
+            <h3>Trabaja con nosotros</h3>
+            <h2>Únete a nuestro equipo</h2>
+            <p>Si tienes habilidades y deseas trabajar con nosotros, no dudes en contactarnos. Estamos siempre abiertos a nuevas propuestas y colaboraciones.</p>
+            <p>Para más información, contáctanos a través de:
+                <a href="mailto:trabajaconnosotros@lunadorada.com">Correo electrónico</a> o llamando al
+                <a href="tel:+34123456789">+34 123 456 789</a>.
+            </p>
+        </section>
+
+        <!-- Botón de volver arriba -->
+        <button id="scrollTopBtn">↑ Volver arriba</button>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var scrollTopBtn = document.getElementById("scrollTopBtn");
+
+            // Mostrar el botón después de hacer scroll
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.style.display = "block";
+                } else {
+                    scrollTopBtn.style.display = "none";
+                }
+            });
+
+            // Volver al inicio al hacer clic en el botón
+            scrollTopBtn.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+    </script>
+       <footer>
+        <p>&copy; 2025 Luna Dorada</p>
+    </footer>
+</body>
+
+</html>
+

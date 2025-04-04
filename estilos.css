@@ -1,0 +1,435 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout */
+.layout {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "leftSide body rightSide"
+    "footer footer footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr; /* Para pantallas pequeñas, todo en una sola columna */
+    grid-template-areas:
+      "header"
+      "body"
+      "footer";
+  }
+}
+
+/* Estilo base del header */
+header {
+  display: flex;
+  justify-content: space-between; /* Alinea el contenido en los extremos */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 10px;
+  background-color: #ffe5d5; /* Color de fondo para el encabezado */
+  position: relative; /* Asegura que el nav se posicione correctamente */
+}
+
+/* Estilo base del nav */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #ffe5d5; /* Color de fondo para el nav */
+  padding: 20px 0; /* Reducido el padding superior e inferior */
+  height: 40px; /* Altura del nav más pequeña */
+  position: absolute; /* Posiciona el nav en el header */
+  right: 0; /* Ubica el nav en el extremo derecho */
+  top: 0; /* Alinea el nav al tope del header */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px; /* Menor espacio entre los elementos */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #e77d3f; 
+  font-size: 16px; /* Reducido el tamaño de la fuente */
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #f265b8; /* Color del texto cuando se pasa el cursor */
+}
+
+/* Mostrar el menú en móviles */
+@media (max-width: 768px) {
+  nav {
+    height: 35px; /* Reducir aún más la altura en dispositivos móviles */
+    padding: 3px 0; /* Reducir padding para dispositivos pequeños */
+    right: 0; /* Asegura que se mantenga a la derecha en dispositivos pequeños */
+  }
+
+  nav ul {
+    flex-direction: column; /* Cambiar los elementos a columna */
+    align-items: center; /* Centrar los elementos en pantallas pequeñas */
+  }
+
+  nav ul li {
+    margin: 5px 0; /* Menos margen entre los elementos en móviles */
+  }
+
+  nav ul li a {
+    font-size: 14px; /* Reducir tamaño de la fuente en móviles */
+  }
+}
+
+
+/* Contenedor del logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.logo {
+  width: 100px; /* Tamaño del logo */
+  height: auto;
+}
+
+
+
+/* Titulo h1 h2 y h3 */
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 1rem; /* Usamos unidades relativas */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 5vw; /* Tamaño responsivo */
+  color: #e77d3f;
+  margin: 0;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.25rem; /* Usamos rem para mayor consistencia */
+  font-weight: 300;
+  margin-top: 50px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+p {
+  margin-bottom: 30px; /* Espacio entre p y la tabla */
+}
+
+table {
+  border-collapse: collapse; /* Mejora la apariencia de la tabla */
+  width: 50%;
+  margin: 0 auto; /* Centra la tabla */
+  border-collapse: collapse; /* Para un mejor diseño */
+}
+
+table td {
+  padding: 10px; /* Espacio dentro de las celdas */
+  border-bottom: 1px solid #ddd; /* Línea divisoria entre filas */
+  background-color: #f39fd0;
+}
+
+
+/* Sección de contenedores */
+.section-container {
+  width: 100%;
+  padding: 20px;
+  background: rgb(251, 245, 239);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Contenedores Flex */
+.contenedor-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.carta, .premio {
+  width: 48%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: rgb(251, 245, 239);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.carta img, .premio img {
+  width: 80%;  /* Ajusta el porcentaje según el tamaño que desees */
+  height: auto;
+  object-fit: cover;  /* Asegura que la imagen no se deforme */
+  border-radius: 10px;
+  margin: 0 auto;  /* Centra la imagen dentro de su contenedor */
+}
+
+
+/* Estilo base del video */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  overflow: hidden; /* Asegura que nada sobresalga */
+}
+
+.video-separado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta el video para cubrir toda la pantalla */
+}
+/* Estilo para la sección sobre nosotros */
+#sobre-nosotros {
+  padding: 20px;
+  background-color: rgb(251, 245, 239);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
+
+#sobre-nosotros h3 {
+  font-size: 2rem;
+}
+
+#sobre-nosotros p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .video-container {
+      height: 50vh; /* En pantallas pequeñas, el video ocupa solo el 50% de la altura */
+  }
+
+  #sobre-nosotros {
+      width: 90%;
+      margin: 20px auto;
+  }
+}
+/* Estilo de los eventos */
+/* Estilo para la sección de eventos */
+#eventos-privados {
+  width: 100%;
+  padding: 40px;
+  background-color: rgb(251, 245, 239); /* Fondo de la sección */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  margin-bottom: 40px; /* Espacio inferior */
+  min-height: 400px; /* Asegura que la sección tenga al menos 400px de altura */
+}
+
+#eventos-privados .texto-eventos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Centra el texto */
+}
+
+#eventos-privados h3 {
+  font-size: 2rem; /* Tamaño ajustado */
+  margin-top: 20px; /* Mueve el h3 más abajo */
+  color: #333; /* Asegúrate de que el color sea visible, puedes ajustarlo */
+}
+
+#eventos-privados h2 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#eventos-privados p {
+  font-size: 1rem;
+  margin-bottom: 10px; /* Espaciado entre los párrafos */
+}
+
+#eventos-privados ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#eventos-privados ul li {
+  margin-bottom: 10px; /* Espaciado entre cada item de la lista */
+}
+
+.imagenes-eventos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  margin-bottom: 30px; /* Ajusta la separación según lo que necesites */
+
+  
+}
+
+.item-evento {
+  width: 250px;
+}
+
+.item-evento img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.item-evento img:hover {
+  transform: scale(1.1);
+}
+
+/* Favoritos */
+.los-favoritos h2 {
+  margin-bottom: 20px;
+}
+
+.los-favoritos {
+  background-color: rgb(251, 245, 239);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.imagenes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+}
+
+.item {
+  width: 200px;
+  text-align: center;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 15px;
+}
+
+.item img:hover {
+  transform: scale(1.1);
+}
+
+.item p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Trabaja con nosotros */
+#trabaja-con-nosotros a {
+  text-decoration: none;
+  color: #f288dd;
+}
+
+#trabaja-con-nosotros a:hover {
+  color: #f288dd;
+}
+
+/* Botón de volver arriba */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: none;
+  transition: opacity 0.3s;
+}
+
+/* Formulario */
+form {
+  background: rgb(251, 245, 239);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buttonContacto {
+  background: #ff9de6;
+  color: rgb(251, 245, 239);
+  border: none;
+}
+
+.imagen-ubi {
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.30s ease-in-out;
+  margin-top: 20px;
+  margin-bottom: 30px; /* Ajusta la separación según lo que necesites */
+}
+
+/* Estilo del footer */
+footer {
+  background-color: #e77d3f;
+  color: rgb(251, 245, 239);
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 40px;
+}
